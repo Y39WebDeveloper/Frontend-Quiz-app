@@ -37,10 +37,9 @@ function generateCategory(data) {
     console.log(data.length)
     for (let i = 0; i < data.length; i++) {
         let e = data[i];
-        categoryList.innerHTML += `<li data-id="${i}" ><a class="d-flex flex-start hs bold" href="#"><div class="icon d-flex flex-center"><img src="${e.icon}" alt=""></div>${e.title}</a></li>`
+        categoryList.innerHTML += `<li data-id="${i}" ><a class="d-flex flex-start hs bold" href="#"><div class="icon d-flex flex-center" style="background-color: ${e.color};"><img src="${e.icon}" alt=""></div>${e.title}</a></li>`
     }
 }
-
 
 
 function startQuiz(data) {
@@ -60,10 +59,10 @@ function startQuiz(data) {
 function setTitle(title, obj) {
     title.innerHTML = ` 
     <h3 class="hs bold d-flex flex-start">
-    <div class="icon-title d-flex flex-center">
-    <img src="${obj.icon}" alt="" />
-    </div>
-    <span>${obj.title}</span>
+        <div class="icon-title d-flex flex-center" style="background-color: ${obj.color};">
+            <img src="${obj.icon}" alt="" />
+        </div>
+        <span>${obj.title}</span>
     </h3>
     `
 }
@@ -84,14 +83,16 @@ function setQuiz(quizObj) {
     let nextBtn = document.getElementById("nextQuestion")
     nextBtn.addEventListener("click", () => {
         currenIndex++;
-        if (currenIndex >= 9) {
+        setProgress(currenIndex, count-1)
+        if (currenIndex > 9) {
+            setProgress(0,0)
             document.getElementById("start").classList.remove("active")
             document.getElementById("quiz").classList.remove("active")
             document.getElementById("score").classList.add("active")
 
             document.getElementById("scoreTitle").innerHTML =
                 `
-            <div class="icon-title d-flex flex-center">
+            <div class="icon-title d-flex flex-center" style="background-color: ${quizObj.color};">
                 <img src="${quizObj.icon}" alt="" />
             </div>
             <span>${quizObj.title}</span>
@@ -189,6 +190,9 @@ function checkAnswer(rightAnswer, questions) {
         console.log(answers[choosenIndex].nextElementSibling)
         score++;
         console.log("Yeeeeees")
+    } else if(!choosenIndex){
+        console.log("dd")
+        answers[rightIndex].nextElementSibling.classList.add("success2")
     } else {
         answers[choosenIndex].nextElementSibling.classList.add("failed")
         answers[rightIndex].nextElementSibling.classList.add("success2")
@@ -196,6 +200,16 @@ function checkAnswer(rightAnswer, questions) {
     }
 }
 
-function gameOver() {
-
+function setProgress(index, count){
+    let progress = document.getElementById("progress")
+    progress.style.width = `${(index/count)*100}%`
 }
+
+const darkmode = document.getElementById("darkmode");
+darkmode.addEventListener("change",(e) => {
+    if(e.currentTarget.checked){
+        document.body.classList.add("dark")
+    }else{
+        document.body.classList.remove("dark")
+    }
+})
