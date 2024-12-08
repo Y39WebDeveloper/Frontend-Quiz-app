@@ -6,32 +6,32 @@ const title = document.getElementById("title")
 let score = 0;
 let currenIndex = 0;
 
-function yuyiu(){
-    let myRequest = new XMLHttpRequest();
-    myRequest.onreadystatechange = function(){
-        if(this.readyState === 4 && this.status === 200){
-            let data1 = JSON.parse(this.responseText);
-            let data = data1.quizzes
-            console.log(data)
-            generateCategory(data)
-            startQuiz(data)
-            console.log(categoryList)
-        }
-    }
-    myRequest.open("GET", "../data.json", true);
-    myRequest.send();
-}
+// function yuyiu(){
+//     let myRequest = new XMLHttpRequest();
+//     myRequest.onreadystatechange = function(){
+//         if(this.readyState === 4 && this.status === 200){
+//             let data1 = JSON.parse(this.responseText);
+//             let data = data1.quizzes
+//             console.log(data)
+//             generateCategory(data)
+//             startQuiz(data)
+//             console.log(categoryList)
+//         }
+//     }
+//     myRequest.open("GET", "../data.json", true);
+//     myRequest.send();
+// }
 
 yuyiu()
 
 
 
-// fetch("data.json").then(data => data.json()).then(data => data.quizzes).then((data) => {
-//     console.log(data)
-//     console.log(categoryList)
-//     generateCategory(data)
-//     startQuiz(data)
-// })
+fetch("data.json").then(data => data.json()).then(data => data.quizzes).then((data) => {
+    console.log(data)
+    console.log(categoryList)
+    generateCategory(data)
+    startQuiz(data)
+})
 
 function generateCategory(data) {
     console.log(data.length)
