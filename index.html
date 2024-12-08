@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Frontend quiz app</title>
+    <link rel="stylesheet" href="css/lib.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="d-flex flex-center">
+    <div id="root">
+      <section>
+        <nav id="navbar" class="d-flex flex-between">
+          <div class="dark-mode">
+            <input type="checkbox" name="" id="darkmode" />
+          </div>
+          <div class="title" id="title">
+            <!-- <h3 class="hs bold d-flex flex-start">
+              <div class="icon-title d-flex flex-center">
+                <img src="assets/images/icon-accessibility.svg" alt="" />
+              </div>
+              <span>Accessibility</span>
+            </h3> -->
+          </div>
+        </nav>
+        <div class="start d-flex flex-between active" id="start">
+          <div class="text d-flex flex-column-start">
+            <h1 class="hl bold">
+              <span>Welcome to the<br></span>
+              Frontend Quiz!
+            </h1>
+            <p class="bs italic">Pick a subject to get started.</p>
+          </div>
+
+          <ul id="categoryList" class="category d-flex flex-column-stretch">
+            <!-- <li><a class="d-flex flex-start hs bold" href=""><div class="icon d-flex flex-center"><img src="assets/images/icon-html.svg" alt=""></div>HTML</a></li>
+            <li><a class="d-flex flex-start hs bold" href=""><div class="icon d-flex flex-center"><img src="assets/images/icon-html.svg" alt=""></div>HTML</a></li>
+            <li><a class="d-flex flex-start hs bold" href=""><div class="icon d-flex flex-center"><img src="assets/images/icon-html.svg" alt=""></div>HTML</a></li>
+            <li><a class="d-flex flex-start hs bold" href=""><div class="icon d-flex flex-center"><img src="assets/images/icon-html.svg" alt=""></div>HTML</a></li> -->
+          </ul>
+        </div>
+
+        <div class="quiz d-flex flex-between" id="quiz">
+          <div class="text d-flex flex-column-start">
+            <p class="bs italic" id="questionNumber">Question 6 of 10</p>
+            <p class="hm bold" id="questionText">Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?</p>
+            <div class="progress">
+              <span></span>
+            </div>
+          </div>
+
+          <ul class="question d-flex flex-column-stretch" id="answers">
+            <li><input type="radio" name="answer" id="answer_1"><label for="answer_1" class="d-flex flex-start hs bold"><span>A</span>4.5 : 1<div class="indicator"></div></label></li>
+            <li><input type="radio" name="answer" id="answer_2"><label for="answer_2" class="d-flex flex-start hs bold"><span>B</span>4.5 : 1</label></li>
+            <li><input type="radio" name="answer" id="answer_3"><label for="answer_3" class="d-flex flex-start hs bold"><span>C</span>4.5 : 1</label></li>
+            <li><input type="radio" name="answer" id="answer_4"><label for="answer_4" class="d-flex flex-start hs bold"><span>D</span>4.5 : 1</label></li>
+            <button class="btn hs bold">Submit Answer</button>
+            <button class="btn hs bold hide">Next Question</button>
+          </ul>
+        </div>
+
+        <div class="score d-flex flex-between" id="score">
+          <div class="text">
+            <h1 class="hl bold">
+              <span>Quiz completed<br /></span>
+              You scored...
+            </h1>
+          </div>
+          <div class="board d-flex flex-column-stretch">
+            <div class="card">
+              <h3 class="hs bold d-flex flex-start" id="scoreTitle">
+                <div class="icon-title d-flex flex-center">
+                  <img src="assets/images/icon-accessibility.svg" alt="" />
+                </div>
+                <span>Accessibility</span>
+              </h3>
+              <div class="result" id="result">
+                <span>8</span><p class="bm">out of 10</p>
+              </div>
+            </div>
+            <button class="btn" id="palyAgain">Play Again</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
