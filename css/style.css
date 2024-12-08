@@ -342,7 +342,7 @@ section>nav h3 .icon-title img {
 
 .score .card {
     padding: 48px;
-    background-color: var(--white);
+    background-color: var(--q-color);
     border-radius: 24px;
     width: 564px;
     height: 388px;
@@ -381,7 +381,7 @@ section>nav h3 .icon-title img {
 }
 
 .score .card .result p {
-    color: var(--grey-navy);
+    color: var(--p-color);
 }
 
 @media (max-width:1188px) {
