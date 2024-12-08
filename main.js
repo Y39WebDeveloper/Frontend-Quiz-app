@@ -187,16 +187,11 @@ function checkAnswer(rightAnswer, questions) {
     if (rightAnswer == questions.options[choosenAnswer]) {
         score++;
         answers[choosenIndex].nextElementSibling.classList.add("success")
-        console.log(answers[choosenIndex].nextElementSibling)
-        score++;
-        console.log("Yeeeeees")
     } else if(!choosenAnswer){
-        console.log("dd")
         answers[rightIndex].nextElementSibling.classList.add("success2")
     } else {
         answers[choosenIndex].nextElementSibling.classList.add("failed")
         answers[rightIndex].nextElementSibling.classList.add("success2")
-        console.log("Nooooooo")
     }
 }
 
