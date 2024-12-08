@@ -22,7 +22,7 @@ let currenIndex = 0;
 //     myRequest.send();
 // }
 
-yuyiu()
+// yuyiu()
 
 
 
@@ -37,7 +37,6 @@ function generateCategory(data) {
     console.log(data.length)
     for (let i = 0; i < data.length; i++) {
         let e = data[i];
-        console.log(e)
         categoryList.innerHTML += `<li data-id="${i}" ><a class="d-flex flex-start hs bold" href="#"><div class="icon d-flex flex-center"><img src="${e.icon}" alt=""></div>${e.title}</a></li>`
     }
 }
