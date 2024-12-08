@@ -1,5 +1,5 @@
 # Frontend Mentor - Frontend quiz app
-live preview : https://y39webdeveloper.github.io/Download-starter-files/
+live preview : https://y39webdeveloper.github.io/Frontend-Quiz-app/
 ![Design preview for the Frontend quiz app coding challenge](./preview.jpg)
 
 ## Welcome! 👋
