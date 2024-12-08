@@ -190,7 +190,7 @@ function checkAnswer(rightAnswer, questions) {
         console.log(answers[choosenIndex].nextElementSibling)
         score++;
         console.log("Yeeeeees")
-    } else if(!choosenIndex){
+    } else if(!choosenAnswer){
         console.log("dd")
         answers[rightIndex].nextElementSibling.classList.add("success2")
     } else {
